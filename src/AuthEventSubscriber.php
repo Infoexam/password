@@ -17,7 +17,8 @@ class AuthEventSubscriber
      *
      * @param Attempting $attempting
      */
-    public function onUserAttempting(Attempting $attempting) {
+    public function onUserAttempting(Attempting $attempting)
+    {
         self::$credentials = $attempting->credentials;
     }
 
@@ -26,7 +27,8 @@ class AuthEventSubscriber
      *
      * @param Login $login
      */
-    public function onUserLogin(Login $login) {
+    public function onUserLogin(Login $login)
+    {
         $password = new Password($login->user, self::$credentials);
 
         if ($password->needUpgrade()) {
