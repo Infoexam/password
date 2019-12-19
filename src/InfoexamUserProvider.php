@@ -19,6 +19,9 @@ class InfoexamUserProvider extends EloquentUserProvider
     {
         $password = new Password($user, $credentials);
 
-        return $this->hasher->check($password->userPassword(), $user->getAuthPassword());
+        return $this->hasher->check(
+            $password->userPassword(),
+            $user->getAuthPassword()
+        );
     }
 }

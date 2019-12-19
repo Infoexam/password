@@ -4,10 +4,13 @@ namespace Infoexam\Password;
 
 use Illuminate\Auth\Events\Attempting;
 use Illuminate\Auth\Events\Login;
+use Illuminate\Events\Dispatcher;
 
 class AuthEventSubscriber
 {
     /**
+     * User login credentials.
+     *
      * @var array
      */
     protected static $credentials = [];
@@ -42,7 +45,7 @@ class AuthEventSubscriber
     /**
      * Register the listeners for the subscriber.
      *
-     * @param \Illuminate\Events\Dispatcher $events
+     * @param Dispatcher $events
      */
     public function subscribe($events)
     {

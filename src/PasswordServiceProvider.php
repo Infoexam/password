@@ -21,14 +21,4 @@ class PasswordServiceProvider extends ServiceProvider
             return new InfoexamUserProvider($app['hash'], $config['model']);
         });
     }
-
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
 }
